@@ -1,0 +1,36 @@
+https://medium.com/@ic3b3rg/project-gnar-d274165793b6
+https://github.com/atlassian/react-beautiful-dnd
+https://gitlab.com/gnaar
+https://www.telerik.com/blogs/hello-create-react-app-2
+https://alligator.io/react/axios-react/
+https://hackernoon.com/reactjs-component-lifecycle-methods-a-deep-dive-38275d9d13c0
+https://hackernoon.com/where-to-integrate-api-calls-in-reactjs-componentwillmount-vs-componentdidmount-710085dc05c3
+https://codeburst.io/how-to-call-api-in-a-smart-way-2ca572c6fe86
+https://github.com/ustwo/ustwo.com-frontend/tree/master/src/app
+https://www.reddit.com/r/reactjs/comments/9mcfgi/how_do_you_guard_your_routes/
+https://github.com/ahfarmer/calculator/tree/master/src
+https://blog.bitsrc.io/implement-better-drag-and-drop-in-your-react-app-beafc4451599
+
+https://ihatetomatoes.net/react-tutorial-for-beginners/
+https://coderjourney.com/tutorials/how-to-add-blueprintjs-to-a-react-app/
+
+UI
+https://github.com/ElemeFE/element-react
+https://github.com/grommet/grommet-react-app
+https://stackoverflow.com/questions/36795819/when-should-i-use-curly-braces-for-es6-import/36796281#36796281
+https://material-ui.com/
+https://v2.grommet.io/components
+
+NOTES
+Use axios, jwt-decode, fontawesome, react-localstorage?, router?
+React mixin for authentication on each component for access to the API, uses local storage
+
+API JSON Format:
+https://developer.spotify.com/documentation/web-api/reference/artists/get-several-artists/
+https://developer.spotify.com/documentation/web-api/reference/object-model/#paging-object
+https://developer.spotify.com/documentation/web-api/reference/object-model/
+https://developer.spotify.com/documentation/web-api/
+https://developers.soundcloud.com/docs/api/reference#users
+https://developer.zendesk.com/rest_api/docs/core/schedules
+https://stripe.com/docs/api/sources/object?lang=curl
+https://www.vinaysahni.com/best-practices-for-a-pragmatic-restful-api
