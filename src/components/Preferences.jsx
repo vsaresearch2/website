@@ -35,8 +35,14 @@ export default class Preferences extends React.Component {
   }
 
   handleClick() {
-    console.log(this.formApi.getState().values);
-    //axios.post('http://localhost:3001/api/v1/preferences');
+    console.log(this.formApi.getState().values);   
+    axios.post('http://vaaapi.azurewebsites.net/api/preferences', this.formApi.getState().values)
+    .then(function(response) {
+      console.log(response.data);
+      const link='/Schedule/'+response.data
+      window.open(link, "_blank") //to open new page
+
+    });;
 
     // will require 400 response from API server
   }
@@ -56,9 +62,10 @@ export default class Preferences extends React.Component {
             <Option value="" disabled>
               Select One...
           </Option>
-            <Option value="uw">University of Washington</Option>
-            <Option value="ccc">Cascadia Community College</Option>
-            <Option value="ecc">Everett Community College</Option>
+            <Option value="1">University of Washington</Option>
+            <Option value='2'>Washington State University</Option>
+            <Option value="5">University of Washington Bothell</Option>
+            <Option value="15">Everett Community College</Option>
             <Option value="other">Other</Option>
           </Select>
         </Container>
@@ -69,9 +76,10 @@ export default class Preferences extends React.Component {
             <Option value="" disabled>
               Select One...
           </Option>
-            <Option value="art">Art</Option>
-            <Option value="css">Computer Science</Option>
-            <Option value="mth">Math</Option>
+            <Option value="4">Art</Option>
+            <Option value="2">Computer Science</Option>
+            <Option value="3">Math</Option>
+            <Option value="16">Mechanical Engineering</Option>
             <Option value="phl">Philosophy</Option>
           </Select>
         </Container>
@@ -178,10 +186,10 @@ export default class Preferences extends React.Component {
             <Option value="" disabled>
               Select One...
           </Option>
-            <Option value="autumn">Autumn</Option>
-            <Option value="winter">Winter</Option>
-            <Option value="spring">Spring</Option>
-            <Option value="summer">Summer</Option>
+            <Option value="1">Autumn</Option>
+            <Option value="2">Winter</Option>
+            <Option value="3">Spring</Option>
+            <Option value="4">Summer</Option>
           </Select>
         </Container>
 
@@ -191,9 +199,9 @@ export default class Preferences extends React.Component {
             <Option value="" disabled>
               Select One...
           </Option>
-            <Option value="math-1">Full</Option>
-            <Option value="math-2">Part</Option>
-            <Option value="math-3">None</Option>
+            <Option value="1">Full</Option>
+            <Option value="2">Part</Option>
+            <Option value="3">None</Option>
           </Select>
         </Container>
 
@@ -203,8 +211,8 @@ export default class Preferences extends React.Component {
             <Option value="" disabled>
               Select One...
           </Option>
-            <Option value="math-1">Full</Option>
-            <Option value="math-2">Part</Option>
+            <Option value="1">Full</Option>
+            <Option value="2">Part</Option>
           </Select>
         </Container>
 
@@ -232,9 +240,9 @@ export default class Preferences extends React.Component {
           </Select>
         </Container>
 
-        <Link to="/train">
+        
           <Button onClick={this.handleClick}>Submit</ Button>
-        </Link>
+        
       </Form>
     )
   }

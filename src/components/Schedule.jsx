@@ -56,8 +56,10 @@ export default class Schedule extends React.Component {
   }
 
   async componentDidMount() {
+    var parts = window.location.pathname.split('/');
+    var lastSegment = parts.pop() || parts.pop(); 
     //const schedule = (await axios.get('http://localhost:3001/api/v1/schedules/1')).data;
-    const response = (await axios.get('http://vaaapi.azurewebsites.net/api/Schedules')).data;
+    const response = (await axios.get('http://vaaapi.azurewebsites.net/api/Schedules/'+lastSegment)).data;
     const schedule = JSON.parse(response);
 
     console.log(schedule.quarters);
@@ -115,9 +117,9 @@ export default class Schedule extends React.Component {
         }
       })
     }
-    updatedSchedule.metadata.rating = this.formApi.getState().values;
+    updatedSchedule.rating = this.formApi.getState().values;
     console.log(updatedSchedule);
-    //axios.post('http://localhost:3001/api/v1/preferences');
+    axios.post('http://vaaapi.azurewebsites.net/api/Rating', updatedSchedule);
   }
 
   setFormApi(formApi) {
@@ -222,6 +224,7 @@ export default class Schedule extends React.Component {
               <Option value="" disabled>
                 Select A Score...
               </Option>
+              <Option value="-1">-1</Option>
               <Option value="1">1</Option>
               <Option value="2">2</Option>
               <Option value="3">3</Option>
